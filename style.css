@@ -1,4 +1,15 @@
 
+:root {
+    --color-secondary-opacity: #ffcd0331;
+    --color-primary-opacity: #5ec5763a;
+    --color-tertiary-opacity: #ff58602d;
+    --color-secondary-darker: #ffbb00;
+    --color-primary: #00aeed;
+    --color-tertiary: #ff585f;
+    --color-tertiary-darker: #fd424b;
+    --color-secondary: #ffcb03;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -220,13 +231,11 @@ h2 {
 
 
 /********************** Section Hospitals *************************/
-.hospitalTitle {
-    font-size: 8rem;
-    padding: 80px;
-    text-align: center;
+.hospitals {
+    height: 100vh;
 }
 .banner {
-    height: 100vh;
+    height: 100%;
 }
 .bannerContainer {
     display: flex;
@@ -302,18 +311,20 @@ h2 {
 .operations {
     max-width: 100rem;
     margin: 12rem auto 0 auto;
-  
+    display: flex;
     background-color: #fff;
   }
   
   .operations__tab-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
   
   .operations__tab {
-    margin-right: 2.5rem;
-    transform: translateY(-50%);
+    /* margin-right: 2.5rem; */
+    /* transform: translateX(-50%); */
+    padding: 20px;
   }
   
   .operations__tab span {
@@ -340,7 +351,7 @@ h2 {
   }
   
   .operations__tab--active {
-    transform: translateY(-66%);
+    /* transform: translateY(-66%); */
   }
   
   .operations__content {
