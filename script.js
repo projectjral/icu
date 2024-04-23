@@ -73,25 +73,25 @@ headerObserver.observe(header);
 
 
 
-// Reveal sections
+// // Reveal sections
 
-const revealSection = function (entries, observer) {
-    const [entry] = entries;
+// const revealSection = function (entries, observer) {
+//     const [entry] = entries;
 
-    if (!entry.isIntersecting) return;
+//     if (!entry.isIntersecting) return;
 
-    entry.target.classList.remove('section--hidden');
-}
+//     entry.target.classList.remove('section--hidden');
+// }
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-    root: null,
-    threshold: 0.15,
-});
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//     root: null,
+//     threshold: 0.15,
+// });
 
-allSections.forEach(function (section) {
-    sectionObserver.observe(section);
-    section.classList.add('section--hidden');
-});
+// allSections.forEach(function (section) {
+//     sectionObserver.observe(section);
+//     section.classList.add('section--hidden');
+// });
 
 
 
