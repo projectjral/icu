@@ -227,6 +227,7 @@ h2 {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .banner {
@@ -245,6 +246,7 @@ h2 {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .medLogo {
@@ -252,7 +254,7 @@ h2 {
 }
 
 .bannerContainer h2 {
-    font-size: 15rem;
+    font-size: 10rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #f3f3f3;
     z-index: 1;
@@ -309,7 +311,51 @@ h2 {
 }
 
 
+
+/********************** MODAL WINDOW *************************/
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* MODAL WINDOW */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  background-color: #f3f3f3;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.close--btn {
+  position: absolute;
+  right: 50px;
+  z-index: 1;
+  color: #fdfdfd;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+}
+
 /********************** OPERATIONS *************************/
+/* OPERATIONS */
 .operations {
   background-color: #ddd;
   display: flex;
@@ -319,6 +365,7 @@ h2 {
   background-color: black;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .operations__tab {
@@ -340,22 +387,21 @@ h2 {
   background-image: url(img/delossantos.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  max-height: 1000px;
+  max-height: 80vh;
   overflow-y: auto;
-  width: 100%;
+  width: 80vw;
 }
 
 .operations__content--active {
-  
   display: flex;
   flex-direction: column;
   padding: 20px 500px 100px 100px;
   color: #ddd;
   position: relative;
 }
-  .operations__logo {
+  .operations__logo img {
     position: absolute;
-    right: 100px;
+    right: 10px;
   }
 
 .operations__header {
@@ -363,12 +409,11 @@ h2 {
   font-weight: 500;
   align-self: left;
   padding-top: 80px;
-  z-index: 1;
+
 }
 
 .operations__content p {
   padding-top: 50px;
-  z-index: 1;
   color: #ddd;
   font-size: 2rem;
 }
@@ -591,8 +636,10 @@ h2 {
 /*******************************************/
 /******************************************/
 
+
 @media (max-width: 799px) {
-  
+
+
   /* ------- index page ------- */
   .nav__links {
     display: flex;
@@ -664,6 +711,41 @@ h2 {
     width: 100px;
   }
 
+  /* operations area **************/
+  .operations__tab-container {
+    width: 20%;
+  }
+  .operations__tab {
+    padding: 15px;
+  }
+  .operations__tab--active {
+    transform: translateX(5%);
+  }
+  
+  .operations__logo img{
+    width: 100px;
+    padding-top: 10px;
+  }
+  .operations__content--active {
+    padding: 10px;
+  }
+  .operations__header {
+    font-size: 2.5rem;
+  }
+
+  .operations__content p {
+    padding-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .close--btn {
+    right: 20px;
+    z-index: 1;
+    color: #fdfdfd;
+    font-size: 35px;
+  }
+
+   /*********************TABLES***********************/
 
 
   /*********************************************/
@@ -671,6 +753,8 @@ h2 {
 /*********************************************/
 
 @media (max-width: 477px) {
+  
+
   .section--hidden {
     opacity: 1;
     transform: none;
