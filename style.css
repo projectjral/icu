@@ -222,6 +222,7 @@ h2 {
     width: 800px;
     padding-top: 300px;
     opacity: 0.3;
+    overflow-x: hidden;
   }
 
 /********************** Section Hospitals *************************/
