@@ -1035,5 +1035,19 @@ margin:50px auto
     padding: 1.25rem;
     border-top: 1px solid #ddd;
   }
+
+  .operations__tab,
+  .operations__tab2,
+  .operations__tab3 {
+    padding: 3px;
+    font-size: .5rem;
+  }
+
+  .operations__tab span,
+  .operations__tab2 span,
+  .operations__tab3 span{
+    margin-right: 5px;
+  }
+
 }
 }
