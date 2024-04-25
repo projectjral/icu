@@ -324,7 +324,8 @@ h2 {
 }
 
 /* MODAL WINDOW */
-.modal {
+.modal,
+.modal2 {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -366,14 +367,16 @@ h2 {
   display: flex;
 }
 
-.operations__tab-container {
+.operations__tab-container,
+.operations__tab-container2 {
   background-color: black;
   display: flex;
   flex-direction: column;
   z-index: 1;
 }
 
-.operations__tab {
+.operations__tab,
+.operations__tab2 {
   padding: 20px;
   background-color: rgb(250, 115, 115);
   display: flex;
@@ -382,17 +385,21 @@ h2 {
 }
 
 
-.operations__tab span{
+.operations__tab span,
+.operations__tab2 span {
   margin-right: 20px;
 }
-.operations__tab .icons {
+.operations__tab .icons,
+.operations__tab2 .icons {
   width: 50px;
 }
-.operations__tab--active {
+.operations__tab--active,
+.operations__tab--active2 {
   transform: translateX(10%);
 }
 
-.operations__content {
+.operations__content,
+.operations__content2 {
   display: none;
   position: relative;
   background-image: url(img/delossantos.jpg);
@@ -688,6 +695,47 @@ margin:50px auto
 /**********************************************/
 /*********************************************/
 /*               MEDIA QUERIES              */
+/*******************************************/
+/******************************************/
+
+@media(max-width: 1280px)
+ {
+
+
+  .header__img {
+    width: 650px;
+  }
+  .header__img2 {
+    display: none;
+
+  }
+
+  .section-about {
+    margin-left: 200px;
+  }
+
+ }
+
+ /*******************************************/
+/******************************************/
+@media(max-width: 1024px) {
+
+  .bannerContainer h2 {
+    font-size: 6rem;
+  }
+  
+  .medLogo {
+    width: 300px;
+  }
+  
+
+  .section-about {
+    margin-left: 130px;
+  }
+
+}
+
+
 /*******************************************/
 /******************************************/
 @media(max-width: 900px)

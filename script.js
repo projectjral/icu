@@ -7,13 +7,17 @@ const nav = document.querySelector('.nav');
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContainer2 = document.querySelector('.operations__tab-container2');
 const tabs = document.querySelectorAll('.operations__tab');
+const tabs2 = document.querySelectorAll('.operations__tab2');
 const tabsContent = document.querySelectorAll('.operations__content');
 const modal = document.querySelector('.modal');
 const modal2 = document.querySelector('.modal2');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnCloseModal2 = document.querySelector('.btn--close-modal2');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnsOpenModal2 = document.querySelectorAll('.btn--show-modal2');
 
 
 //////////////////////////////////////////
@@ -111,17 +115,28 @@ const closeModal = function () {
     overlay.classList.add('hidden');
 };
 
+const openModal2 = function (e) {
+    e.preventDefault();
+    modal2.classList.remove('hidden');
+};
+
+const closeModal2 = function () {
+    modal2.classList.add('hidden');
+};
 
 
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+btnsOpenModal2.forEach(btn => btn.addEventListener('click', openModal2));
 
 btnCloseModal.addEventListener('click', closeModal);
+btnCloseModal2.addEventListener('click', closeModal2);
 
 overlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden') || !modal2.classList.contains('hidden')) {
         closeModal();
+        closeModal2();
     }
 });
 
@@ -148,6 +163,29 @@ tabsContainer.addEventListener('click', function (e) {
     document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
 
 });
+
+tabsContainer2.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.operations__tab2');
+    console.log(clicked);
+
+
+    // Guard clause
+    if (!clicked) return;
+
+    // Remove active classes
+    tabs2.forEach(t => t.classList.remove('operations__tab--active'));
+
+    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    // Activate tab
+    clicked.classList.add('operations__tab--active');
+
+    // Activate content area
+    // console.log(clicked.dataset.tab);
+    document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
+
+});
+
+
 
 
 ///////////////////////////////////////////// Slider
@@ -185,6 +223,45 @@ const prevSlide = function () {
         curSlide--;
     };
     goToSlide(curSlide)
+};
+
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+});
+
+
+
+///////////////////////////////////////////// Slider2
+
+const slides2 = document.querySelectorAll('.slide2');
+const slider2 = document.querySelector('.slider2');
+
+const goToSlide2 = function (slide2) {
+    slides2.forEach((s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`));
+}
+
+goToSlide2(0);
+
+const nextSlide2 = function () {
+    if (curSlide === maxSlide - 1) {
+        curSlide = 0;
+    } else {
+        curSlide++;
+    };
+    goToSlide(curSlide)
+};
+
+const prevSlide2 = function () {
+    if (curSlide === 0) {
+        curSlide = maxSlide - 1;
+    } else {
+        curSlide--;
+    };
+    goToSlide2(curSlide)
 };
 
 btnRight.addEventListener('click', nextSlide);
