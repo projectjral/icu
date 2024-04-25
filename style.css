@@ -219,8 +219,8 @@ h2 {
     width: 50%;
 }
   .header__img2 {
-    width: 800px;
-    padding-top: 300px;
+    width: 600px;
+    padding-top: 150px;
     opacity: 0.3;
     overflow-x: hidden;
   }
@@ -329,8 +329,9 @@ h2 {
   position: fixed;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
-  max-width: 100%;
+  max-width: 80%;
   background-color: #f3f3f3;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
@@ -377,7 +378,7 @@ h2 {
 
 .operations__tab,
 .operations__tab2 {
-  padding: 20px;
+  padding: 2px;
   background-color: rgb(250, 115, 115);
   display: flex;
   align-items: center;
@@ -387,15 +388,15 @@ h2 {
 
 .operations__tab span,
 .operations__tab2 span {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .operations__tab .icons,
 .operations__tab2 .icons {
-  width: 50px;
+  width: 30px;
 }
 .operations__tab--active,
 .operations__tab--active2 {
-  transform: translateX(10%);
+  transform: translateX(20%);
 }
 
 .operations__content,
@@ -420,10 +421,11 @@ h2 {
   .operations__logo img {
     position: absolute;
     right: 10px;
+    width: 200px;
   }
 
 .operations__header {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 500;
   align-self: left;
   padding-top: 100px;
@@ -431,9 +433,10 @@ h2 {
 }
 
 .operations__content p {
-  padding-top: 50px;
+  padding-top: 30px;
   color: #ddd;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  width: 500px;
 }
 
 
@@ -497,7 +500,7 @@ h2 {
 /*********************************************/
 /* SLIDER */
 .slider {
-  max-width: 100rem;
+  max-width: 300rem;
   height: 100rem;
   margin: 0 auto;
   position: relative;
@@ -572,8 +575,8 @@ h2 {
 }
 
 .testimonial__photo {
-  grid-row: 1 / span 2;
-  width: 6.5rem;
+  grid-row: 1 / span 1;
+  width: 5rem;
   border-radius: 50%;
 }
 
@@ -602,7 +605,7 @@ h2 {
   margin: 50px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 12px;
-  margin-left: 350px;
+  margin-left: 300px;
 }
 .image{
   background-color: #88e0f8;
