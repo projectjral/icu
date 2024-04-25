@@ -774,6 +774,17 @@ margin:50px auto
 /******************************************/
 @media (max-width: 799px) {
 
+  .header__img {
+    width: 100%;
+  }
+  .header__img2 {
+    width: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+  }
+
   .image{
     height: 30vh;
 }
@@ -829,9 +840,6 @@ margin:50px auto
   }
   .header {
     height: 70vh;
-  }
-  .header__img {
-    width: 100%;
   }
 
   .bannerContainer {
@@ -916,7 +924,7 @@ margin:50px auto
     padding: 40px 40px;
   }
   .header__img {
-    display: none;
+    margin-top: -650px;
   }
 
   .nav {
