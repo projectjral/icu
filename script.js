@@ -8,16 +8,23 @@ const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContainer2 = document.querySelector('.operations__tab-container2');
+const tabsContainer3 = document.querySelector('.operations__tab-container3');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabs2 = document.querySelectorAll('.operations__tab2');
+const tabs3 = document.querySelectorAll('.operations__tab3');
 const tabsContent = document.querySelectorAll('.operations__content');
+const tabsContent2 = document.querySelectorAll('.operations__content2');
+const tabsContent3 = document.querySelectorAll('.operations__content3');
 const modal = document.querySelector('.modal');
 const modal2 = document.querySelector('.modal2');
+const modal3 = document.querySelector('.modal3');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnCloseModal2 = document.querySelector('.btn--close-modal2');
+const btnCloseModal3 = document.querySelector('.btn--close-modal3');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnsOpenModal2 = document.querySelectorAll('.btn--show-modal2');
+const btnsOpenModal3 = document.querySelectorAll('.btn--show-modal3');
 
 
 //////////////////////////////////////////
@@ -118,23 +125,40 @@ const closeModal = function () {
 const openModal2 = function (e) {
     e.preventDefault();
     modal2.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 };
 
 const closeModal2 = function () {
     modal2.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
+
+const openModal3 = function (e) {
+    e.preventDefault();
+    modal3.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+};
+
+const closeModal3 = function () {
+    modal3.classList.add('hidden');
+    overlay.classList.add('hidden');
 };
 
 
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 btnsOpenModal2.forEach(btn => btn.addEventListener('click', openModal2));
+btnsOpenModal3.forEach(btn => btn.addEventListener('click', openModal3));
 
 btnCloseModal.addEventListener('click', closeModal);
 btnCloseModal2.addEventListener('click', closeModal2);
+btnCloseModal3.addEventListener('click', closeModal3);
 
 overlay.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal2);
+overlay.addEventListener('click', closeModal3);
 
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden') || !modal2.classList.contains('hidden')) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden') || !modal2.classList.contains('hidden') || !modal3.classList.contains('hidden')) {
         closeModal();
         closeModal2();
     }
@@ -164,6 +188,7 @@ tabsContainer.addEventListener('click', function (e) {
 
 });
 
+// Tabbed component 2
 tabsContainer2.addEventListener('click', function (e) {
     const clicked = e.target.closest('.operations__tab2');
     console.log(clicked);
@@ -173,15 +198,37 @@ tabsContainer2.addEventListener('click', function (e) {
     if (!clicked) return;
 
     // Remove active classes
-    tabs2.forEach(t => t.classList.remove('operations__tab--active'));
+    tabs2.forEach(t => t.classList.remove('operations__tab--active2'));
 
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabsContent2.forEach(c => c.classList.remove('operations__content--active2'));
     // Activate tab
-    clicked.classList.add('operations__tab--active');
+    clicked.classList.add('operations__tab--active2');
 
     // Activate content area
     // console.log(clicked.dataset.tab);
-    document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
+    document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active2');
+
+});
+
+// Tabbed component 3
+tabsContainer3.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.operations__tab3');
+    console.log(clicked);
+
+
+    // Guard clause
+    if (!clicked) return;
+
+    // Remove active classes
+    tabs3.forEach(t => t.classList.remove('operations__tab--active3'));
+
+    tabsContent3.forEach(c => c.classList.remove('operations__content--active3'));
+    // Activate tab
+    clicked.classList.add('operations__tab--active3');
+
+    // Activate content area
+    // console.log(clicked.dataset.tab);
+    document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active3');
 
 });
 
