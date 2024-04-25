@@ -10,6 +10,7 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContent = document.querySelectorAll('.operations__content');
 const modal = document.querySelector('.modal');
+const modal2 = document.querySelector('.modal2');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
